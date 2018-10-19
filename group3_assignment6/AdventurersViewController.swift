@@ -22,6 +22,10 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(155)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
