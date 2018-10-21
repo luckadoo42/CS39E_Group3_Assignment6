@@ -8,11 +8,15 @@
 
 import UIKit
 
-class RecruitmentViewController: UIViewController {
+class RecruitmentViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var enterName: UITextField!
+    @IBOutlet weak var enterClass: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        enterName.delegate = self
         // Do any additional setup after loading the view.
     }
     

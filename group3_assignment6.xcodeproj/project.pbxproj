@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01FA3419217A74C600FC1AC2 /* Jumpman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01FA3418217A74C200FC1AC2 /* Jumpman.ttf */; };
 		0730AD022179711B003EFE8C /* RecruitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730AD012179711B003EFE8C /* RecruitmentViewController.swift */; };
 		0730AD04217972C3003EFE8C /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730AD03217972C3003EFE8C /* DismissSegue.swift */; };
 		0730AD0621797429003EFE8C /* AdventurersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730AD0521797429003EFE8C /* AdventurersViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01FA3418217A74C200FC1AC2 /* Jumpman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Jumpman.ttf; path = ../../../../Downloads/jumpman/Jumpman.ttf; sourceTree = "<group>"; };
 		0730AD012179711B003EFE8C /* RecruitmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentViewController.swift; sourceTree = "<group>"; };
 		0730AD03217972C3003EFE8C /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		0730AD0521797429003EFE8C /* AdventurersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventurersViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		D759E18E2179417E00429060 /* group3_assignment6 */ = {
 			isa = PBXGroup;
 			children = (
+				01FA3418217A74C200FC1AC2 /* Jumpman.ttf */,
 				D759E18F2179417E00429060 /* AppDelegate.swift */,
 				D759E1932179417E00429060 /* Main.storyboard */,
 				0730AD07217A383B003EFE8C /* AdventurerTableViewCell.swift */,
@@ -137,6 +140,7 @@
 				D759E19D2179417E00429060 /* LaunchScreen.storyboard in Resources */,
 				D759E19A2179417E00429060 /* Assets.xcassets in Resources */,
 				D759E1952179417E00429060 /* Main.storyboard in Resources */,
+				01FA3419217A74C600FC1AC2 /* Jumpman.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

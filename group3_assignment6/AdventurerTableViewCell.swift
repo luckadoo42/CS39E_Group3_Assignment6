@@ -10,6 +10,9 @@ import UIKit
 
 class AdventurerTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var adventurerName: UILabel!
+    @IBOutlet weak var adventurerImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +23,4 @@ class AdventurerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-
 }
