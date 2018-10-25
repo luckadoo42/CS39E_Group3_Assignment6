@@ -205,8 +205,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.047058823530000002" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="adventurerAttack" destination="Bs2-VD-sxp" id="te2-mq-gHu"/>
+                                            <outlet property="adventurerHP" destination="El0-DP-bqf" id="fKM-3l-hZA"/>
                                             <outlet property="adventurerImage" destination="ju7-ko-sP7" id="wfq-5n-MDW"/>
+                                            <outlet property="adventurerLevel" destination="gEp-XX-JUC" id="VFo-aX-OLh"/>
                                             <outlet property="adventurerName" destination="3Od-W3-mqZ" id="dgw-Je-eR9"/>
+                                            <outlet property="adventurerType" destination="JV9-ef-bUN" id="xLT-oR-mSd"/>
                                             <segue destination="lgH-zH-RO4" kind="presentation" id="hBO-uG-oOZ"/>
                                         </connections>
                                     </tableViewCell>
