@@ -12,6 +12,10 @@ class AdventurerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var adventurerName: UILabel!
     @IBOutlet weak var adventurerImage: UIImageView!
+    @IBOutlet weak var adventurerHP: UILabel!
+    @IBOutlet weak var adventurerAttack: UILabel!
+    @IBOutlet weak var adventurerType: UILabel!
+    @IBOutlet weak var adventurerLevel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

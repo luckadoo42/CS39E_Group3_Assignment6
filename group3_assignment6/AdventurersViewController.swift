@@ -17,20 +17,20 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
     var adventurers: [NSManagedObject] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return adventurers.count
+        return Adventurer.adventurers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let adventurer = adventurers[indexPath.row]
+        let adventurer = Adventurer.adventurers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "adventurerCell") as! AdventurerTableViewCell
         
-        if adventurer.value(forKeyPath: "image") != nil {
-        cell.adventurerImage.image = UIImage(named: adventurer.value(forKeyPath: "image") as! String)
-        }
-        else {
-            cell.adventurerImage.image = UIImage(named: "donkeykong.jpg")
-        }
-        cell.adventurerName.text = adventurer.value(forKeyPath: "name") as? String
+        cell.adventurerImage.image = UIImage(named: adventurer.image)
+        cell.adventurerType.text = adventurer.type
+        cell.adventurerLevel.text = String(adventurer.level)
+        cell.adventurerAttack.text = "ATTACK: " + String(adventurer.attack)
+        cell.adventurerHP.text = "HP: " + String(adventurer.remainingHP) + "/" + String(adventurer.totalHP)
+        cell.adventurerName.text = adventurer.name
+        
         return cell
     }
     
@@ -41,21 +41,6 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // This only needs to be run once to save the info to the CoreData
-//        addInitialCharacters(name: "Donkey Kong", image: "donkeykong.jpg")
-//        addInitialCharacters(name: "King K. Rool", image: "kingkrool.jpg")
-//        addInitialCharacters(name: "Klump", image: "klump.jpg")
-//        addInitialCharacters(name: "Diddy Kong", image: "diddykong.jpg")
-//        addInitialCharacters(name: "Squawks", image: "squawks.jpg")
-//        addInitialCharacters(name: "Funky Kong", image: "funkykong.jpg")
-//        addInitialCharacters(name: "Rambi the Rhino", image: "rambi.jpg")
-//        addInitialCharacters(name: "Cranky Kong", image: "crankykong.jpg")
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -70,9 +55,55 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         
         do {
             adventurers = try managedContext.fetch(fetchRequest)
+            print(adventurers.count)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        
+        // This only needs to be run once to save the info to the CoreData
+        // Initial values
+        let names = ["Donkey Kong", "King K. Rool", "Klump", "Diddy Kong", "Squawks", "Funky Kong", "Rambi the Rhino", "Cranky Kong"]
+        let images = ["donkeykong.jpg", "kingkrool.jpg", "klump.jpg", "diddykong.jpg", "squawks.jpg", "funkykong.jpg", "rambi.jpg", "crankykong.jpg"]
+        let remainingHPs = [100, 100, 120, 120, 110, 105, 107, 108]
+        let totalHPs = [100, 100, 120, 120, 110, 105, 107, 108]
+        let attacks:[Float] = [1.00, 2.21, 2.12, 1.21, 5.2, 6.52, 3.42, 2.12]
+        let levels = [5, 2, 3, 6, 1, 2, 3, 8]
+        let types = ["Bard", "Mage", "Warrior", "Archer", "Tree", "Muffin", "Elf", "Human"]
+        
+        if (adventurers.count == 0) {
+            for i in 0..<names.count {
+                let adv = Adventurer(name: names[i], image: images[i], remainingHP: remainingHPs[i], totalHP: totalHPs[i], attack: attacks[i], level: levels[i], type: types[i])
+                Adventurer.adventurers.append(adv)
+                
+            }
+            for i in 0..<Adventurer.adventurers.count {
+                let adventurer = Adventurer.adventurers[i]
+                addInitialCharacters(name: adventurer.name, image: adventurer.image, remainingHP: adventurer.remainingHP, totalHP: adventurer.totalHP, attack: adventurer.attack, level: adventurer.level, type: adventurer.type)
+            }
+        } else {
+            for i in 0..<adventurers.count {
+                let adventurer = adventurers[i]
+                
+                let name = adventurer.value(forKeyPath: "name") as! String
+                let image = adventurer.value(forKeyPath: "image") as! String
+                let remainingHP = adventurer.value(forKeyPath: "remainingHP") as! Int
+                let totalHP = adventurer.value(forKeyPath: "totalHP") as! Int
+                let attack = adventurer.value(forKeyPath: "attack") as! Float
+                let level = adventurer.value(forKeyPath: "level") as! Int
+                let type = adventurer.value(forKeyPath: "type") as! String
+                
+                let adv = Adventurer(name: name, image: image, remainingHP: remainingHP, totalHP: totalHP, attack: attack, level: level, type: type)
+                
+                Adventurer.adventurers.append(adv)
+            }
+        }
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
         
 //        // Uncomment this section to delete all the data written in the character entity of core data
 //
@@ -89,9 +120,12 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
 //        }
         
         
+        
     }
     
-    func addInitialCharacters(name: String, image: String) {
+
+    
+    func addInitialCharacters(name: String, image: String, remainingHP : Int, totalHP: Int, attack : Float, level: Int, type:String) {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -109,7 +143,12 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
 
         person.setValue(name, forKeyPath: "name")
         person.setValue(image, forKeyPath: "image")
-
+        person.setValue(remainingHP, forKeyPath: "remainingHP")
+        person.setValue(totalHP, forKeyPath: "totalHP")
+        person.setValue(attack, forKeyPath: "attack")
+        person.setValue(level, forKeyPath: "level")
+        person.setValue(type, forKeyPath: "type")
+        
         do {
             try managedContext.save()
             adventurers.append(person)
