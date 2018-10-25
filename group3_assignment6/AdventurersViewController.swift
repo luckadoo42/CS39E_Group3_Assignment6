@@ -91,8 +91,6 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-
-    
     func addInitialCharacters(name: String, image: String) {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {

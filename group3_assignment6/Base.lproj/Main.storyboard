@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kJO-45-JRm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="adventurerCell" rowHeight="155" id="kpj-NG-Fgf" customClass="AdventurerTableViewCell" customModule="group3_assignment6" customModuleProvider="target">
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="31.934032983508249"/>
         </scene>
-        <!--View Controller-->
+        <!--Quest View Controller-->
         <scene sceneID="nTF-No-1he">
             <objects>
-                <viewController id="lgH-zH-RO4" sceneMemberID="viewController">
+                <viewController id="lgH-zH-RO4" customClass="QuestViewController" customModule="group3_assignment6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kcQ-Gu-Iis">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxs-Kk-VqY">
-                                <rect key="frame" x="317" y="57" width="8" height="21"/>
+                                <rect key="frame" x="317" y="57" width="27" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -289,7 +289,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-uF-Nul">
-                                <rect key="frame" x="310" y="123" width="11" height="21"/>
+                                <rect key="frame" x="310" y="123" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -314,13 +314,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Beginning Quest...
-Bon Jovi attacks for 53 damage
-The monster is waiting...
-Bon Jovi attacks for 60 damage
-Enemy is defeated!
-A new enemy appears!
-The monster attacks for 1 damage
-Bon Jovi attacks for 48 damage</string>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -339,13 +333,19 @@ Bon Jovi attacks for 48 damage</string>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S05-sk-8gJ"/>
                     </view>
+                    <connections>
+                        <outlet property="HPLabel" destination="XlT-cB-qXM" id="Wyq-UB-8ZE"/>
+                        <outlet property="LevelLabel" destination="gxs-Kk-VqY" id="Hhc-cv-f1k"/>
+                        <outlet property="attackLabel" destination="f1I-uF-Nul" id="cfN-XJ-8f9"/>
+                        <outlet property="questLog" destination="4qo-pF-zhu" id="9ul-hS-hf0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p3-b2-J5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952.8" y="749.7751124437782"/>
+            <point key="canvasLocation" x="1800.8" y="784.85757121439292"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V6T-zl-LXk"/>
+        <segue reference="YMv-yp-MzL"/>
     </inferredMetricsTieBreakers>
 </document>
