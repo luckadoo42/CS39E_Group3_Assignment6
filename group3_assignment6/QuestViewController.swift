@@ -71,9 +71,9 @@ class QuestViewController: UIViewController {
             userTimer.invalidate()
             enemyTimer.invalidate()
         }
-        let userDamage = Float.random(in: 0 ... attack)
+        let userDamage = Int(floor(Float.random(in: 0...attack * 10)))
         questLog.text += "\r\n\(name) attacks for \(userDamage) damage"
-        monsterHP -= Int(userDamage)
+        monsterHP -= userDamage
         updateLabels()
     }
     

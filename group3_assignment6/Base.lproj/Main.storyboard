@@ -155,52 +155,69 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ju7-ko-sP7">
-                                                    <rect key="frame" x="0.0" y="11" width="133" height="133"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ju7-ko-sP7">
+                                                    <rect key="frame" x="8" y="8" width="132" height="138.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="132" id="Qcs-GZ-5RY"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donkey Kong" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-W3-mqZ">
-                                                    <rect key="frame" x="141" y="38" width="219" height="78"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donkey Kong" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-W3-mqZ">
+                                                    <rect key="frame" x="140" y="55.5" width="235" height="44"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="38"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.18667996313140733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.85432142930577171" green="0.85697572969543145" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <size key="shadowOffset" width="2" height="-2"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV9-ef-bUN">
-                                                    <rect key="frame" x="141" y="11" width="173" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack: 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-VD-sxp">
+                                                    <rect key="frame" x="148" y="122.5" width="79.5" height="24"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="21"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="1" height="-1"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attack: 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-VD-sxp">
-                                                    <rect key="frame" x="141" y="123" width="109" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEp-XX-JUC">
+                                                    <rect key="frame" x="353" y="8" width="6" height="24"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="21"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="1" height="-1"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEp-XX-JUC">
-                                                    <rect key="frame" x="338" y="10" width="22" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP: 99/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El0-DP-bqf">
+                                                    <rect key="frame" x="283.5" y="122.5" width="83.5" height="24"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="21"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="1" height="-1"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HP: 99/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El0-DP-bqf">
-                                                    <rect key="frame" x="276" y="124" width="99" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV9-ef-bUN">
+                                                    <rect key="frame" x="148" y="8" width="38" height="24"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="21"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="1" height="-1"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gEp-XX-JUC" secondAttribute="trailing" constant="16" id="3ce-sd-ELw"/>
+                                                <constraint firstItem="ju7-ko-sP7" firstAttribute="top" secondItem="Q3i-pi-v6Q" secondAttribute="top" constant="8" id="3dj-1Y-R28"/>
+                                                <constraint firstItem="JV9-ef-bUN" firstAttribute="top" secondItem="Q3i-pi-v6Q" secondAttribute="top" constant="8" id="9KY-yD-x5E"/>
+                                                <constraint firstItem="JV9-ef-bUN" firstAttribute="leading" secondItem="ju7-ko-sP7" secondAttribute="trailing" constant="8" id="Btr-TJ-CpF"/>
+                                                <constraint firstItem="ju7-ko-sP7" firstAttribute="centerY" secondItem="Q3i-pi-v6Q" secondAttribute="centerY" id="QBq-gi-gCh"/>
+                                                <constraint firstAttribute="bottom" secondItem="ju7-ko-sP7" secondAttribute="bottom" constant="8" id="Rmt-kl-zLq"/>
+                                                <constraint firstAttribute="trailing" secondItem="3Od-W3-mqZ" secondAttribute="trailing" id="Ttw-cr-Uld"/>
+                                                <constraint firstItem="ju7-ko-sP7" firstAttribute="centerY" secondItem="Q3i-pi-v6Q" secondAttribute="centerY" id="USV-fR-ZbT"/>
+                                                <constraint firstItem="3Od-W3-mqZ" firstAttribute="centerY" secondItem="Q3i-pi-v6Q" secondAttribute="centerY" id="ZRM-kW-sRo"/>
+                                                <constraint firstItem="ju7-ko-sP7" firstAttribute="leading" secondItem="Q3i-pi-v6Q" secondAttribute="leading" constant="8" id="ZXf-j3-NOw"/>
+                                                <constraint firstAttribute="trailing" secondItem="3Od-W3-mqZ" secondAttribute="trailing" id="cKH-bs-pke"/>
+                                                <constraint firstAttribute="bottom" secondItem="El0-DP-bqf" secondAttribute="bottom" constant="8" id="dd0-jH-X5Q"/>
+                                                <constraint firstItem="gEp-XX-JUC" firstAttribute="top" secondItem="Q3i-pi-v6Q" secondAttribute="top" constant="8" id="izs-bY-D8w"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bs2-VD-sxp" secondAttribute="bottom" constant="8" id="jaF-eL-b3i"/>
+                                                <constraint firstAttribute="trailing" secondItem="El0-DP-bqf" secondAttribute="trailing" constant="8" id="jai-5Z-bGb"/>
+                                                <constraint firstItem="Bs2-VD-sxp" firstAttribute="leading" secondItem="ju7-ko-sP7" secondAttribute="trailing" constant="8" id="nbu-lx-rgS"/>
+                                                <constraint firstItem="3Od-W3-mqZ" firstAttribute="leading" secondItem="ju7-ko-sP7" secondAttribute="trailing" id="npY-Ed-Jfb"/>
+                                                <constraint firstItem="ju7-ko-sP7" firstAttribute="centerY" secondItem="Q3i-pi-v6Q" secondAttribute="centerY" id="xa1-KU-u14"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.047058823530000002" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -223,10 +240,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kJO-45-JRm" firstAttribute="leading" secondItem="HlP-xf-s7V" secondAttribute="leading" id="05O-4d-627"/>
                             <constraint firstItem="kJO-45-JRm" firstAttribute="trailing" secondItem="HlP-xf-s7V" secondAttribute="trailing" id="1ok-oa-ADl"/>
+                            <constraint firstItem="kJO-45-JRm" firstAttribute="bottom" secondItem="HlP-xf-s7V" secondAttribute="bottom" id="2mV-8h-48X"/>
+                            <constraint firstItem="kJO-45-JRm" firstAttribute="top" secondItem="HlP-xf-s7V" secondAttribute="top" id="65C-gx-h14"/>
                             <constraint firstItem="kJO-45-JRm" firstAttribute="leading" secondItem="HlP-xf-s7V" secondAttribute="leading" id="MZn-bG-Pzs"/>
                             <constraint firstItem="kJO-45-JRm" firstAttribute="top" secondItem="HlP-xf-s7V" secondAttribute="top" id="OKi-85-voM"/>
                             <constraint firstItem="kJO-45-JRm" firstAttribute="bottom" secondItem="HlP-xf-s7V" secondAttribute="bottom" id="h96-xO-bN5"/>
+                            <constraint firstItem="kJO-45-JRm" firstAttribute="trailing" secondItem="HlP-xf-s7V" secondAttribute="trailing" id="k9M-1r-V1L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HlP-xf-s7V"/>
                     </view>
@@ -353,6 +374,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="kEf-f9-ppQ"/>
         <segue reference="YMv-yp-MzL"/>
     </inferredMetricsTieBreakers>
 </document>
