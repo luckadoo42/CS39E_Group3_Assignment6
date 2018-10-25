@@ -14,7 +14,9 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var characterTableView: UITableView!
     
+    
     var adventurers: [NSManagedObject] = []
+    var selectedAdventurer: Adventurer?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Adventurer.adventurers.count
@@ -36,6 +38,18 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(155)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedAdventurer = Adventurer.adventurers[indexPath.row]
+        performSegue(withIdentifier: "questView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "questView") {
+            let vc = segue.destination as! QuestViewController
+            vc.adventurer = selectedAdventurer
+        }
     }
     
 

@@ -169,7 +169,7 @@
                                                     <size key="shadowOffset" width="2" height="-2"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV9-ef-bUN">
-                                                    <rect key="frame" x="141" y="11" width="38" height="24"/>
+                                                    <rect key="frame" x="141" y="11" width="173" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="21"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -177,7 +177,7 @@
                                                     <size key="shadowOffset" width="1" height="-1"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attack: 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-VD-sxp">
-                                                    <rect key="frame" x="141" y="123" width="80" height="24"/>
+                                                    <rect key="frame" x="141" y="123" width="109" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="21"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -193,7 +193,7 @@
                                                     <size key="shadowOffset" width="1" height="-1"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HP: 99/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El0-DP-bqf">
-                                                    <rect key="frame" x="276" y="124" width="84" height="24"/>
+                                                    <rect key="frame" x="276" y="124" width="99" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Jumpman" family="Jumpman" pointSize="21"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -211,7 +211,7 @@
                                             <outlet property="adventurerLevel" destination="gEp-XX-JUC" id="VFo-aX-OLh"/>
                                             <outlet property="adventurerName" destination="3Od-W3-mqZ" id="dgw-Je-eR9"/>
                                             <outlet property="adventurerType" destination="JV9-ef-bUN" id="xLT-oR-mSd"/>
-                                            <segue destination="lgH-zH-RO4" kind="presentation" id="hBO-uG-oOZ"/>
+                                            <segue destination="lgH-zH-RO4" kind="presentation" identifier="questView" trigger="accessoryAction" id="kEf-f9-ppQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -248,7 +248,7 @@
         <!--Quest View Controller-->
         <scene sceneID="nTF-No-1he">
             <objects>
-                <viewController id="lgH-zH-RO4" customClass="QuestViewController" customModule="group3_assignment6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lgH-zH-RO4" customClass="QuestViewController" customModule="group3_assignment6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kcQ-Gu-Iis">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,7 +258,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bon Jovi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3s-4g-P41">
-                                <rect key="frame" x="231" y="57" width="66" height="21"/>
+                                <rect key="frame" x="231" y="57" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -272,7 +272,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-if-zFM">
-                                <rect key="frame" x="232" y="94" width="36" height="21"/>
+                                <rect key="frame" x="232" y="94" width="143" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -293,14 +293,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-uF-Nul">
-                                <rect key="frame" x="310" y="123" width="34" height="21"/>
+                                <rect key="frame" x="310" y="123" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlT-cB-qXM">
-                                <rect key="frame" x="306" y="152" width="55" height="21"/>
+                                <rect key="frame" x="306" y="152" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -340,8 +340,11 @@
                     <connections>
                         <outlet property="HPLabel" destination="XlT-cB-qXM" id="Wyq-UB-8ZE"/>
                         <outlet property="LevelLabel" destination="gxs-Kk-VqY" id="Hhc-cv-f1k"/>
+                        <outlet property="adventurerImage" destination="eb5-0x-FP2" id="wcR-ZH-SIN"/>
                         <outlet property="attackLabel" destination="f1I-uF-Nul" id="cfN-XJ-8f9"/>
+                        <outlet property="nameLabel" destination="a3s-4g-P41" id="JGT-ee-dN9"/>
                         <outlet property="questLog" destination="4qo-pF-zhu" id="9ul-hS-hf0"/>
+                        <outlet property="typeLabel" destination="LBX-if-zFM" id="xdz-qx-wmC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p3-b2-J5i" userLabel="First Responder" sceneMemberID="firstResponder"/>

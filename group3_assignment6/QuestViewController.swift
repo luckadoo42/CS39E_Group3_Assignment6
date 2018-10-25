@@ -14,21 +14,38 @@ class QuestViewController: UIViewController {
     @IBOutlet weak var HPLabel: UILabel!
     @IBOutlet weak var LevelLabel: UILabel!
     @IBOutlet weak var attackLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var adventurerImage: UIImageView!
     
     var userTimer = Timer()
     var enemyTimer = Timer()
-    var adventurer = "DK"
+    var name = "DK"
+    
+    var adventurer : Adventurer? = nil
+    
     var level = 1
-    var attack = 9
+    var attack : Float = 9
     var totalHP = 99
+    var type = "Bard"
     var remainingHP = 99
     var monsterAttack = 20
     var monsterHP = 20
+    var image = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        startQuest()
+        if (adventurer != nil) {
+            name = adventurer!.name
+            level = adventurer!.level
+            attack = adventurer!.attack
+            totalHP = adventurer!.totalHP
+            remainingHP = adventurer!.remainingHP
+            type = adventurer!.type
+            image = adventurer!.image
+            startQuest()
+            updateLabels()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -50,19 +67,19 @@ class QuestViewController: UIViewController {
     @objc func userAttack() {
         if remainingHP <= 0 {
             remainingHP = 0
-            questLog.text += "\r\n\(adventurer) is defeated"
+            questLog.text += "\r\n\(name) is defeated"
             userTimer.invalidate()
             enemyTimer.invalidate()
         }
-        let userDamage = Int.random(in: 0 ... attack)
-        questLog.text += "\r\n\(adventurer) attacks for \(userDamage) damage"
-        monsterHP -= userDamage
+        let userDamage = Float.random(in: 0 ... attack)
+        questLog.text += "\r\n\(name) attacks for \(userDamage) damage"
+        monsterHP -= Int(userDamage)
         updateLabels()
     }
     
     @objc func enemyAttack() {
         if monsterHP <= 0 {
-            questLog.text += "\r\nThe monster is defeated\r\n\(adventurer) leveled up"
+            questLog.text += "\r\nThe monster is defeated\r\n\(name) leveled up"
             attack += 1
             level += 1
             userTimer.invalidate()
@@ -74,7 +91,7 @@ class QuestViewController: UIViewController {
                 questLog.text += "\r\nThe monster is waiting..."
             } else {
                 let enemyDamage = Int.random(in: 0 ... monsterAttack)
-                questLog.text += "\r\nThe monster attacks \(adventurer) for \(enemyDamage)"
+                questLog.text += "\r\nThe monster attacks \(name) for \(enemyDamage)"
                 remainingHP -= enemyDamage
             }
         }
@@ -85,6 +102,9 @@ class QuestViewController: UIViewController {
         HPLabel.text = "\(remainingHP)/\(totalHP)"
         LevelLabel.text = "\(level)"
         attackLabel.text = "\(attack)"
+        nameLabel.text = "\(name)"
+        typeLabel.text = "\(type)"
+        adventurerImage.image = UIImage(named: image)
         
         if questLog.text.count > 0 {
             let location = questLog.text.count - 1
