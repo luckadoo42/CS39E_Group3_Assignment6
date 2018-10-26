@@ -87,7 +87,9 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         let levels = [5, 2, 3, 6, 1, 2, 3, 8]
         let types = ["Bard", "Mage", "Warrior", "Archer", "Tree", "Muffin", "Elf", "Human"]
         
-        if (AdventurersViewController.adventurers.count == 0) {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        print(launchedBefore)
+        if (!launchedBefore) {
             for i in 0..<names.count {
                 let adv = Adventurer(name: names[i], image: images[i], remainingHP: remainingHPs[i], totalHP: totalHPs[i], attack: attacks[i], level: levels[i], type: types[i])
                 Adventurer.adventurers.append(adv)
@@ -97,6 +99,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
                 let adventurer = Adventurer.adventurers[i]
                 addInitialCharacters(name: adventurer.name, image: adventurer.image, remainingHP: adventurer.remainingHP, totalHP: adventurer.totalHP, attack: adventurer.attack, level: adventurer.level, type: adventurer.type)
             }
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
         } else {
             for i in 0..<AdventurersViewController.adventurers.count {
                 let adventurer = AdventurersViewController.adventurers[i]
