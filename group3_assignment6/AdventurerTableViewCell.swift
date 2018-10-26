@@ -17,6 +17,7 @@ class AdventurerTableViewCell: UITableViewCell {
     @IBOutlet weak var adventurerType: UILabel!
     @IBOutlet weak var adventurerLevel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

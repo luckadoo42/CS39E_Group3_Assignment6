@@ -28,10 +28,6 @@ class RecruitmentViewController: UIViewController, UITextFieldDelegate, UICollec
         
         cell.imageView.image = UIImage(named: images[indexPath.row])
         
-        if indexPath.item == 0 {
-            cell.backgroundColor = UIColor.gray
-        }
-        
         return cell
     }
     

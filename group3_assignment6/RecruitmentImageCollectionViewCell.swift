@@ -13,4 +13,17 @@ UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    override var isSelected: Bool{
+        didSet{
+            if self.isSelected
+            {
+                self.backgroundColor = UIColor.gray
+            }
+            else
+            {
+                self.backgroundColor = UIColor.white
+            }
+        }
+    }
 }
