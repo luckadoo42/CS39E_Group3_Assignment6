@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RecruitmentViewController: UIViewController, UITextFieldDelegate {
 
@@ -20,6 +21,57 @@ class RecruitmentViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onSave(_ sender: Any) {
+        let name = enterName.text
+        let type = enterClass.text
+        let adv = Adventurer(name: name!, image:"donkeykong.jpg", remainingHP: 100, totalHP:100, attack:1.00, level: 1, type: type!)
+        saveAdventurer(adv: adv)
+        
+    }
+    
+    func saveAdventurer(adv : Adventurer) {
+        
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let entity =
+            NSEntityDescription.entity(forEntityName: "Characters",
+                                       in: managedContext)!
+        
+        let person = NSManagedObject(entity: entity,
+                                     insertInto: managedContext)
+        let name = adv.name
+        let image = adv.image
+        let remainingHP = adv.remainingHP
+        let totalHP = adv.totalHP
+        let attack = adv.attack
+        let level = adv.level
+        let type = adv.type
+            
+            
+            
+        person.setValue(name, forKeyPath: "name")
+        person.setValue(image, forKeyPath: "image")
+        person.setValue(remainingHP, forKeyPath: "remainingHP")
+        person.setValue(totalHP, forKeyPath: "totalHP")
+        person.setValue(attack, forKeyPath: "attack")
+        person.setValue(level, forKeyPath: "level")
+        person.setValue(type, forKeyPath: "type")
+        
+        do {
+            try managedContext.save()
+            AdventurersViewController.adventurers.append(person)
+            Adventurer.adventurers.append(adv)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -15,7 +15,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var characterTableView: UITableView!
     
     
-    var adventurers: [NSManagedObject] = []
+    static var adventurers: [NSManagedObject] = []
     var selectedAdventurer: Adventurer?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,8 +68,8 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
             NSFetchRequest<NSManagedObject>(entityName: "Characters")
         
         do {
-            adventurers = try managedContext.fetch(fetchRequest)
-            print(adventurers.count)
+            AdventurersViewController.adventurers = try managedContext.fetch(fetchRequest)
+            print(AdventurersViewController.adventurers.count)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -84,7 +84,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         let levels = [5, 2, 3, 6, 1, 2, 3, 8]
         let types = ["Bard", "Mage", "Warrior", "Archer", "Tree", "Muffin", "Elf", "Human"]
         
-        if (adventurers.count == 0) {
+        if (AdventurersViewController.adventurers.count == 0) {
             for i in 0..<names.count {
                 let adv = Adventurer(name: names[i], image: images[i], remainingHP: remainingHPs[i], totalHP: totalHPs[i], attack: attacks[i], level: levels[i], type: types[i])
                 Adventurer.adventurers.append(adv)
@@ -95,8 +95,8 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
                 addInitialCharacters(name: adventurer.name, image: adventurer.image, remainingHP: adventurer.remainingHP, totalHP: adventurer.totalHP, attack: adventurer.attack, level: adventurer.level, type: adventurer.type)
             }
         } else {
-            for i in 0..<adventurers.count {
-                let adventurer = adventurers[i]
+            for i in 0..<AdventurersViewController.adventurers.count {
+                let adventurer = AdventurersViewController.adventurers[i]
                 
                 let name = adventurer.value(forKeyPath: "name") as! String
                 let image = adventurer.value(forKeyPath: "image") as! String
@@ -116,6 +116,8 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print(Adventurer.adventurers.count)
+        self.characterTableView.reloadData()
         
         
         
@@ -137,7 +139,6 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-
     
     func addInitialCharacters(name: String, image: String, remainingHP : Int, totalHP: Int, attack : Float, level: Int, type:String) {
         guard let appDelegate =
@@ -165,7 +166,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         
         do {
             try managedContext.save()
-            adventurers.append(person)
+            AdventurersViewController.adventurers.append(person)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }

@@ -122,6 +122,10 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSave:" destination="RaP-tJ-w56" eventType="touchUpInside" id="UzR-dT-HtB"/>
+                                    <segue destination="0OA-ZU-bd2" kind="custom" customClass="DismissSegue" customModule="group3_assignment6" customModuleProvider="target" id="Mqu-T0-YE4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -404,6 +408,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YMv-yp-MzL"/>
+        <segue reference="Mqu-T0-YE4"/>
     </inferredMetricsTieBreakers>
 </document>
