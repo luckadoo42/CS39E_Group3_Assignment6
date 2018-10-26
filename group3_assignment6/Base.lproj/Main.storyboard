@@ -87,22 +87,40 @@
                                 <rect key="frame" x="16" y="269" width="341" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UFx-pK-9DH">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UFx-pK-9DH">
                                     <size key="itemSize" width="118" height="126"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fzh-Vu-if0">
-                                        <rect key="frame" x="0.0" y="0.0" width="118" height="126"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recruitmentImageCell" id="Fzh-Vu-if0" customClass="RecruitmentImageCollectionViewCell" customModule="group3_assignment6" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="118" height="126"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="118" height="126"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donkeykong" translatesAutoresizingMaskIntoConstraints="NO" id="hIQ-dF-gDR">
+                                                    <rect key="frame" x="4" y="4" width="110" height="118"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="hIQ-dF-gDR" firstAttribute="top" secondItem="Fzh-Vu-if0" secondAttribute="top" constant="4" id="YNi-ib-XXi"/>
+                                            <constraint firstAttribute="bottom" secondItem="hIQ-dF-gDR" secondAttribute="bottom" constant="4" id="e9a-3X-rxd"/>
+                                            <constraint firstItem="hIQ-dF-gDR" firstAttribute="leading" secondItem="Fzh-Vu-if0" secondAttribute="leading" constant="4" id="fjX-gN-Ldj"/>
+                                            <constraint firstAttribute="trailing" secondItem="hIQ-dF-gDR" secondAttribute="trailing" constant="4" id="uja-Qr-6qh"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="hIQ-dF-gDR" id="9PT-Jn-7Sr"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="RaP-tJ-w56" id="k9B-vc-Udj"/>
+                                    <outlet property="delegate" destination="RaP-tJ-w56" id="ml8-pO-0Vg"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-5Q-R90">
                                 <rect key="frame" x="72" y="430" width="68" height="33"/>
@@ -134,6 +152,7 @@
                     <connections>
                         <outlet property="enterClass" destination="wdc-hX-xL6" id="lzS-or-A0v"/>
                         <outlet property="enterName" destination="ml8-QQ-5KN" id="Qbg-hB-nGR"/>
+                        <outlet property="imageCollectionView" destination="1Gx-lk-uVx" id="gZY-mp-FvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6a-B9-YCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,6 +426,9 @@
             <point key="canvasLocation" x="1800.8" y="784.85757121439292"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="donkeykong" width="207" height="243"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Mqu-T0-YE4"/>
     </inferredMetricsTieBreakers>

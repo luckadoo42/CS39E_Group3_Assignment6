@@ -9,22 +9,65 @@
 import UIKit
 import CoreData
 
-class RecruitmentViewController: UIViewController, UITextFieldDelegate {
+class RecruitmentViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    
+    let images = ["donkeykong.jpg", "kingkrool.jpg", "klump.jpg", "diddykong.jpg", "squawks.jpg", "funkykong.jpg", "rambi.jpg", "crankykong.jpg"]
+    
+    var selectedImage = "donkeykong.jpg"
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "recruitmentImageCell", for: indexPath) as! RecruitmentImageCollectionViewCell
+        
+        cell.imageView.image = UIImage(named: images[indexPath.row])
+        
+        if indexPath.item == 0 {
+            cell.backgroundColor = UIColor.gray
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        for i in 0..<images.count {
+            let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0))
+            if i == indexPath.item {
+                cell?.backgroundColor = UIColor.gray
+            } else {
+                cell?.backgroundColor = UIColor.white
+            }
+        }
+        
+        selectedImage = images[indexPath.item]
+        print(selectedImage)
+        
+    }
+    
 
     @IBOutlet weak var enterName: UITextField!
     @IBOutlet weak var enterClass: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
 //        enterName.delegate = self
         // Do any additional setup after loading the view.
     }
-    
+
     @IBAction func onSave(_ sender: Any) {
         let name = enterName.text
         let type = enterClass.text
-        let adv = Adventurer(name: name!, image:"donkeykong.jpg", remainingHP: 100, totalHP:100, attack:1.00, level: 1, type: type!)
+        let image = selectedImage
+        let adv = Adventurer(name: name!, image: image, remainingHP: 100, totalHP:100, attack:1.00, level: 1, type: type!)
         saveAdventurer(adv: adv)
         
     }
@@ -72,6 +115,8 @@ class RecruitmentViewController: UIViewController, UITextFieldDelegate {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 
