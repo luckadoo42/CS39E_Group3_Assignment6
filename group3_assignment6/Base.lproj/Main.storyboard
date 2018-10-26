@@ -403,15 +403,28 @@
                                     <segue destination="0OA-ZU-bd2" kind="custom" customClass="DismissSegue" customModule="group3_assignment6" customModuleProvider="target" id="YMv-yp-MzL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-k6-KW1">
+                                <rect key="frame" x="30" y="475" width="45" height="30"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDelete:" destination="lgH-zH-RO4" eventType="touchUpInside" id="YXf-VM-uQ4"/>
+                                    <segue destination="0OA-ZU-bd2" kind="custom" identifier="toTableView" customClass="DismissSegue" customModule="group3_assignment6" customModuleProvider="target" id="TSs-Lc-QdT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gxs-Kk-VqY" firstAttribute="top" secondItem="S05-sk-8gJ" secondAttribute="top" constant="36" id="1Bv-In-7Ul"/>
+                            <constraint firstItem="bcN-k6-KW1" firstAttribute="leading" secondItem="S05-sk-8gJ" secondAttribute="leading" constant="30" id="7Wa-vW-pm9"/>
                             <constraint firstItem="XlT-cB-qXM" firstAttribute="top" secondItem="f1I-uF-Nul" secondAttribute="bottom" constant="16" id="8NC-xS-B2f"/>
                             <constraint firstItem="a3s-4g-P41" firstAttribute="top" secondItem="S05-sk-8gJ" secondAttribute="top" constant="36" id="Ae5-Wf-gYK"/>
                             <constraint firstItem="9tH-ob-wHM" firstAttribute="top" secondItem="eb5-0x-FP2" secondAttribute="bottom" constant="16" id="EKq-uJ-SuK"/>
                             <constraint firstItem="4L0-dR-4G0" firstAttribute="top" secondItem="4qo-pF-zhu" secondAttribute="bottom" constant="16" id="KWw-mT-XHi"/>
                             <constraint firstAttribute="trailing" secondItem="LBX-if-zFM" secondAttribute="trailing" id="MNE-hP-MB3"/>
+                            <constraint firstItem="bcN-k6-KW1" firstAttribute="top" secondItem="4qo-pF-zhu" secondAttribute="bottom" constant="16" id="N0z-DJ-LPn"/>
                             <constraint firstItem="eb5-0x-FP2" firstAttribute="top" secondItem="S05-sk-8gJ" secondAttribute="top" constant="30" id="OdQ-vN-Mk1"/>
                             <constraint firstItem="gha-Me-Oa6" firstAttribute="top" secondItem="RCw-e4-Ehr" secondAttribute="bottom" constant="16" id="PAA-77-aUg"/>
                             <constraint firstItem="XlT-cB-qXM" firstAttribute="trailing" secondItem="S05-sk-8gJ" secondAttribute="trailing" id="TQ9-9c-wyb"/>
@@ -444,13 +457,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p3-b2-J5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="784.85757121439292"/>
+            <point key="canvasLocation" x="2178" y="917"/>
         </scene>
     </scenes>
     <resources>
         <image name="donkeykong" width="207" height="243"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mqu-T0-YE4"/>
+        <segue reference="TSs-Lc-QdT"/>
     </inferredMetricsTieBreakers>
 </document>

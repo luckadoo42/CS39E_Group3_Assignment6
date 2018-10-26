@@ -17,6 +17,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
     
     static var adventurers: [NSManagedObject] = []
     var selectedAdventurer: Adventurer?
+    var selectedAdventurerIndex: Int?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Adventurer.adventurers.count
@@ -42,6 +43,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedAdventurer = Adventurer.adventurers[indexPath.row]
+        selectedAdventurerIndex = indexPath.row
         performSegue(withIdentifier: "questView", sender: self)
     }
     
@@ -49,6 +51,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         if(segue.identifier == "questView") {
             let vc = segue.destination as! QuestViewController
             vc.adventurer = selectedAdventurer
+            vc.adventurerIndex = selectedAdventurerIndex!
         }
     }
     

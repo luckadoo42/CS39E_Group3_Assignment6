@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class QuestViewController: UIViewController {
 
@@ -21,6 +22,7 @@ class QuestViewController: UIViewController {
     var userTimer = Timer()
     var enemyTimer = Timer()
     var name = "DK"
+    var adventurerIndex = 0
     
     var adventurer : Adventurer? = nil
     
@@ -111,5 +113,33 @@ class QuestViewController: UIViewController {
             let bottom = NSMakeRange(location, 1)
             questLog.scrollRangeToVisible(bottom)
         }
+    }
+    @IBAction func onDelete(_ sender: Any) {
+        deleteAdventurer()
+    }
+    
+    func deleteAdventurer() {
+        Adventurer.adventurers.remove(at: adventurerIndex)
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Characters")
+        
+        if (try? managedContext.fetch(fetchRequest)) != nil {
+            managedContext.delete(AdventurersViewController.adventurers[adventurerIndex])
+            do {
+                try managedContext.save()
+            } catch {
+                print("uh oh")
+            }
+        }
+        
+        performSegue(withIdentifier: "toTableView", sender: self)
     }
 }
