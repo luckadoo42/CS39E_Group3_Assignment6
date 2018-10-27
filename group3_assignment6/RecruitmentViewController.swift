@@ -72,7 +72,12 @@ class RecruitmentViewController: UIViewController, UITextFieldDelegate, UICollec
         let image = selectedImage
         
         if (!name!.trimmingCharacters(in: .whitespaces).isEmpty && !type!.trimmingCharacters(in: .whitespaces).isEmpty) {
-            let adv = Adventurer(name: name!, image: image, remainingHP: 100, totalHP:100, attack:1.00, level: 1, type: type!)
+            
+            let randomAttackMultiplier = Float(Int.random(in: 50...150)) / 100
+            let randomTotalHP = Int.random(in: 80...120)
+            
+            
+            let adv = Adventurer(name: name!, image: image, remainingHP: randomTotalHP, totalHP:randomTotalHP, attack:randomAttackMultiplier, level: 1, type: type!)
             saveAdventurer(adv: adv)
             performSegue(withIdentifier: "saveSegue", sender: self)
         }
