@@ -18,8 +18,10 @@ class Adventurer {
     var attack : Float = 1.00
     var level : Int = 1
     var type : String = ""
+    var experience : Int = 0
+    var defense : Float = 0.0
     
-    init(name: String, image:String, remainingHP: Int, totalHP:Int, attack:Float, level: Int, type: String) {
+    init(name: String, image:String, remainingHP: Int, totalHP:Int, attack:Float, level: Int, type: String, experience: Int, defense: Float) {
         
         self.name = name
         self.image = image
@@ -28,6 +30,8 @@ class Adventurer {
         self.attack = attack
         self.level = level
         self.type = type
+        self.experience = experience
+        self.defense = defense
 
     }
 }

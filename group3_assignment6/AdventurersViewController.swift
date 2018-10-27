@@ -86,18 +86,20 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         let attacks:[Float] = [1.00, 2.21, 2.12, 1.21, 5.2, 6.52, 3.42, 2.12]
         let levels = [5, 2, 3, 6, 1, 2, 3, 8]
         let types = ["Bard", "Mage", "Warrior", "Archer", "Tree", "Muffin", "Elf", "Human"]
+        let experiences = [0, 50, 250, 400, 600, 750, 200, 100]
+        let defenses : [Float] = [0.05, 0.24, 0.12, 0.45, 0.21, 0.24, 0.21, 0.24]
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         print(launchedBefore)
         if (!launchedBefore) {
             for i in 0..<names.count {
-                let adv = Adventurer(name: names[i], image: images[i], remainingHP: remainingHPs[i], totalHP: totalHPs[i], attack: attacks[i], level: levels[i], type: types[i])
+                let adv = Adventurer(name: names[i], image: images[i], remainingHP: remainingHPs[i], totalHP: totalHPs[i], attack: attacks[i], level: levels[i], type: types[i], experience: experiences[i], defense: defenses[i])
                 Adventurer.adventurers.append(adv)
                 
             }
             for i in 0..<Adventurer.adventurers.count {
                 let adventurer = Adventurer.adventurers[i]
-                addInitialCharacters(name: adventurer.name, image: adventurer.image, remainingHP: adventurer.remainingHP, totalHP: adventurer.totalHP, attack: adventurer.attack, level: adventurer.level, type: adventurer.type)
+                addInitialCharacters(name: adventurer.name, image: adventurer.image, remainingHP: adventurer.remainingHP, totalHP: adventurer.totalHP, attack: adventurer.attack, level: adventurer.level, type: adventurer.type, experience: adventurer.experience, defense: adventurer.defense)
             }
             UserDefaults.standard.set(true, forKey: "launchedBefore")
         } else {
@@ -111,8 +113,10 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
                 let attack = adventurer.value(forKeyPath: "attack") as! Float
                 let level = adventurer.value(forKeyPath: "level") as! Int
                 let type = adventurer.value(forKeyPath: "type") as! String
+                let defense = adventurer.value(forKeyPath: "defense") as! Float
+                let experience = adventurer.value(forKeyPath: "experience") as! Int
                 
-                let adv = Adventurer(name: name, image: image, remainingHP: remainingHP, totalHP: totalHP, attack: attack, level: level, type: type)
+                let adv = Adventurer(name: name, image: image, remainingHP: remainingHP, totalHP: totalHP, attack: attack, level: level, type: type, experience: experience, defense: defense)
                 
                 Adventurer.adventurers.append(adv)
             }
@@ -147,7 +151,7 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    func addInitialCharacters(name: String, image: String, remainingHP : Int, totalHP: Int, attack : Float, level: Int, type:String) {
+    func addInitialCharacters(name: String, image: String, remainingHP : Int, totalHP: Int, attack : Float, level: Int, type:String, experience:Int, defense:Float) {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -170,6 +174,8 @@ class AdventurersViewController: UIViewController, UITableViewDelegate, UITableV
         person.setValue(attack, forKeyPath: "attack")
         person.setValue(level, forKeyPath: "level")
         person.setValue(type, forKeyPath: "type")
+        person.setValue(defense, forKeyPath: "defense")
+        person.setValue(experience, forKeyPath: "experience")
         
         do {
             try managedContext.save()

@@ -77,7 +77,7 @@ class RecruitmentViewController: UIViewController, UITextFieldDelegate, UICollec
             let randomTotalHP = Int.random(in: 80...120)
             
             
-            let adv = Adventurer(name: name!, image: image, remainingHP: randomTotalHP, totalHP:randomTotalHP, attack:randomAttackMultiplier, level: 1, type: type!)
+            let adv = Adventurer(name: name!, image: image, remainingHP: randomTotalHP, totalHP:randomTotalHP, attack:randomAttackMultiplier, level: 1, type: type!, experience: 0, defense: 0.00)
             saveAdventurer(adv: adv)
             performSegue(withIdentifier: "saveSegue", sender: self)
         }

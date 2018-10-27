@@ -18,7 +18,8 @@ class QuestViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var adventurerImage: UIImageView!
-    
+    @IBOutlet weak var defenseLabel: UILabel!
+    @IBOutlet weak var experienceLabel: UILabel!
     var userTimer = Timer()
     var enemyTimer = Timer()
     
@@ -55,6 +56,7 @@ class QuestViewController: UIViewController {
     @objc func userAttack() {
         if adventurer!.remainingHP <= 0 {
             adventurer!.remainingHP = 0
+            updateLabels()
             questLog.text += "\n\(adventurer!.name) is defeated"
             userTimer.invalidate()
             enemyTimer.invalidate()
@@ -68,9 +70,17 @@ class QuestViewController: UIViewController {
     
     @objc func enemyAttack() {
         if enemy!.remainingHP <= 0 {
-            questLog.text += "\n\(enemy!.name) is defeated\n\(adventurer!.name) leveled up"
-            adventurer!.attack += Float(Int.random(in: 50...100)) / 100
-            adventurer!.level += 1
+            questLog.text += "\n\(enemy!.name) is defeated"
+            adventurer!.experience += Int.random(in: 200...800)
+            let levelUps = Int(floor(Float(adventurer!.experience) / 1000))
+            if levelUps > 0 {
+                questLog.text += "\n\(adventurer!.name) leveled up"
+                adventurer!.level += levelUps
+                adventurer!.experience = adventurer!.experience - levelUps * 1000
+                adventurer!.attack += Float(Int.random(in: 50...100)) / 100.0
+                adventurer!.defense = adventurer!.defense + Float.random(in: 0..<(1 - adventurer!.defense)/4)
+            }
+            updateLabels()
             userTimer.invalidate()
             enemyTimer.invalidate()
             startQuest()
@@ -79,7 +89,7 @@ class QuestViewController: UIViewController {
             if doesEnemyAttack == 0 {
                 questLog.text += "\n\(enemy!.name) is waiting..."
             } else {
-                let enemyDamage = Int(floor(10 * (enemy!.attack)))
+                let enemyDamage = Int(floor(10 * (enemy!.attack) * (1.00 - adventurer!.defense)))
                 questLog.text += "\n\(enemy!.name) attacks \(adventurer!.name) for \(enemyDamage) damage"
                 adventurer!.remainingHP -= enemyDamage
             }
@@ -93,6 +103,8 @@ class QuestViewController: UIViewController {
         attackLabel.text = "\(adventurer!.attack)"
         nameLabel.text = "\(adventurer!.name)"
         typeLabel.text = "\(adventurer!.type)"
+        experienceLabel.text = "XP: \(adventurer!.experience)/1000"
+        defenseLabel.text = "Defense: \(adventurer!.defense)"
         adventurerImage.image = UIImage(named: adventurer!.image)
         
         if questLog.text.count > 0 {
@@ -130,7 +142,7 @@ class QuestViewController: UIViewController {
         performSegue(withIdentifier: "toTableView", sender: self)
     }
     @IBAction func onEndQuest(_ sender: Any) {
-        
+        adventurer!.remainingHP = adventurer!.totalHP
         Adventurer.adventurers[adventurerIndex] = adventurer!
         
         guard let appDelegate =
@@ -147,6 +159,8 @@ class QuestViewController: UIViewController {
         person.setValue(adventurer!.totalHP, forKeyPath: "totalHP")
         person.setValue(adventurer!.attack, forKeyPath: "attack")
         person.setValue(adventurer!.level, forKeyPath: "level")
+        person.setValue(adventurer!.experience, forKeyPath: "experience")
+        person.setValue(adventurer!.defense, forKeyPath: "defense")
         
         do {
             try managedContext.save()

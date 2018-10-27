@@ -446,6 +446,18 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8w-x1-eSc">
+                                                <rect key="frame" x="230" y="180" width="72.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XP: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87y-zZ-NaI">
+                                                <rect key="frame" x="230" y="208.5" width="31" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -454,9 +466,11 @@
                                             <constraint firstItem="gha-Me-Oa6" firstAttribute="leading" secondItem="eb5-0x-FP2" secondAttribute="trailing" constant="31" id="Ctl-0M-1AD"/>
                                             <constraint firstItem="9tH-ob-wHM" firstAttribute="top" secondItem="eb5-0x-FP2" secondAttribute="bottom" constant="44" id="F1N-0U-UpS"/>
                                             <constraint firstItem="RCw-e4-Ehr" firstAttribute="leading" secondItem="eb5-0x-FP2" secondAttribute="trailing" constant="30" id="Gcb-1k-QCk"/>
+                                            <constraint firstItem="87y-zZ-NaI" firstAttribute="top" secondItem="a8w-x1-eSc" secondAttribute="bottom" constant="8" id="JVF-Vr-eHs"/>
                                             <constraint firstItem="K5v-oH-CLw" firstAttribute="trailing" secondItem="4qo-pF-zhu" secondAttribute="trailing" constant="30" id="KU0-Ya-aQs"/>
                                             <constraint firstItem="4qo-pF-zhu" firstAttribute="top" secondItem="9tH-ob-wHM" secondAttribute="bottom" constant="17" id="Kxi-lw-gHt"/>
                                             <constraint firstItem="aKa-rg-Xmf" firstAttribute="centerX" secondItem="id2-1Z-jVf" secondAttribute="centerX" id="Mq6-pL-BOJ"/>
+                                            <constraint firstItem="a8w-x1-eSc" firstAttribute="top" secondItem="gha-Me-Oa6" secondAttribute="bottom" constant="8" id="NDr-lD-fxX"/>
                                             <constraint firstItem="XlT-cB-qXM" firstAttribute="top" secondItem="RCw-e4-Ehr" secondAttribute="bottom" constant="7.5" id="P4G-R1-Gqq"/>
                                             <constraint firstItem="a3s-4g-P41" firstAttribute="top" secondItem="id2-1Z-jVf" secondAttribute="top" constant="40" id="Pw0-It-vCN"/>
                                             <constraint firstItem="LBX-if-zFM" firstAttribute="top" secondItem="a3s-4g-P41" secondAttribute="bottom" constant="32" id="WSh-yq-1eS"/>
@@ -464,7 +478,9 @@
                                             <constraint firstItem="aKa-rg-Xmf" firstAttribute="top" secondItem="4qo-pF-zhu" secondAttribute="bottom" constant="27.5" id="Zix-jc-I5w"/>
                                             <constraint firstItem="gha-Me-Oa6" firstAttribute="top" secondItem="RCw-e4-Ehr" secondAttribute="bottom" constant="8.5" id="aHL-Ey-Oe9"/>
                                             <constraint firstItem="XlT-cB-qXM" firstAttribute="leading" secondItem="gha-Me-Oa6" secondAttribute="trailing" constant="8.5" id="c4S-xy-ZnX"/>
+                                            <constraint firstItem="87y-zZ-NaI" firstAttribute="leading" secondItem="eb5-0x-FP2" secondAttribute="trailing" constant="30" id="dCG-e2-4y4"/>
                                             <constraint firstItem="a3s-4g-P41" firstAttribute="leading" secondItem="eb5-0x-FP2" secondAttribute="trailing" constant="8" id="e8s-6c-iWd"/>
+                                            <constraint firstItem="a8w-x1-eSc" firstAttribute="leading" secondItem="eb5-0x-FP2" secondAttribute="trailing" constant="30" id="h5s-t0-hez"/>
                                             <constraint firstItem="gxs-Kk-VqY" firstAttribute="top" secondItem="id2-1Z-jVf" secondAttribute="top" constant="36" id="h9u-oR-jE2"/>
                                             <constraint firstItem="LBX-if-zFM" firstAttribute="leading" secondItem="eb5-0x-FP2" secondAttribute="trailing" constant="30" id="hJR-j1-o1V"/>
                                             <constraint firstItem="eb5-0x-FP2" firstAttribute="leading" secondItem="K5v-oH-CLw" secondAttribute="leading" constant="30" id="hLM-VI-yBd"/>
@@ -503,6 +519,8 @@
                         <outlet property="LevelLabel" destination="gxs-Kk-VqY" id="Hhc-cv-f1k"/>
                         <outlet property="adventurerImage" destination="eb5-0x-FP2" id="wcR-ZH-SIN"/>
                         <outlet property="attackLabel" destination="f1I-uF-Nul" id="cfN-XJ-8f9"/>
+                        <outlet property="defenseLabel" destination="a8w-x1-eSc" id="Oga-y9-iPQ"/>
+                        <outlet property="experienceLabel" destination="87y-zZ-NaI" id="K6N-jO-jch"/>
                         <outlet property="nameLabel" destination="a3s-4g-P41" id="JGT-ee-dN9"/>
                         <outlet property="questLog" destination="4qo-pF-zhu" id="9ul-hS-hf0"/>
                         <outlet property="typeLabel" destination="LBX-if-zFM" id="xdz-qx-wmC"/>
