@@ -11,6 +11,7 @@
 		01FA3419217A74C600FC1AC2 /* Jumpman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01FA3418217A74C200FC1AC2 /* Jumpman.ttf */; };
 		07194ED421824D0700D3CFB9 /* QuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07194ED321824D0700D3CFB9 /* QuestViewController.swift */; };
 		07194ED62182C0BB00D3CFB9 /* RecruitmentImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07194ED52182C0BB00D3CFB9 /* RecruitmentImageCollectionViewCell.swift */; };
+		07194ED82183E65000D3CFB9 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07194ED72183E65000D3CFB9 /* Enemy.swift */; };
 		0730AD022179711B003EFE8C /* RecruitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730AD012179711B003EFE8C /* RecruitmentViewController.swift */; };
 		0730AD04217972C3003EFE8C /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730AD03217972C3003EFE8C /* DismissSegue.swift */; };
 		0730AD0621797429003EFE8C /* AdventurersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730AD0521797429003EFE8C /* AdventurersViewController.swift */; };
@@ -28,6 +29,7 @@
 		01FA3418217A74C200FC1AC2 /* Jumpman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Jumpman.ttf; path = Assets.xcassets/Jumpman.dataset/Jumpman.ttf; sourceTree = "<group>"; };
 		07194ED321824D0700D3CFB9 /* QuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestViewController.swift; sourceTree = "<group>"; };
 		07194ED52182C0BB00D3CFB9 /* RecruitmentImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		07194ED72183E65000D3CFB9 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		0730AD012179711B003EFE8C /* RecruitmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentViewController.swift; sourceTree = "<group>"; };
 		0730AD03217972C3003EFE8C /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		0730AD0521797429003EFE8C /* AdventurersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventurersViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				07194ED321824D0700D3CFB9 /* QuestViewController.swift */,
+				07194ED72183E65000D3CFB9 /* Enemy.swift */,
 				01FA3418217A74C200FC1AC2 /* Jumpman.ttf */,
 				D759E18F2179417E00429060 /* AppDelegate.swift */,
 				D759E1932179417E00429060 /* Main.storyboard */,
@@ -168,6 +171,7 @@
 				D759E1982179417E00429060 /* group3_assignment6.xcdatamodeld in Sources */,
 				07194ED62182C0BB00D3CFB9 /* RecruitmentImageCollectionViewCell.swift in Sources */,
 				0730AD0C21815428003EFE8C /* Adventurer.swift in Sources */,
+				07194ED82183E65000D3CFB9 /* Enemy.swift in Sources */,
 				01134B3A21815C2E00204DF1 /* (null) in Sources */,
 				0730AD08217A383B003EFE8C /* AdventurerTableViewCell.swift in Sources */,
 				0730AD0621797429003EFE8C /* AdventurersViewController.swift in Sources */,
