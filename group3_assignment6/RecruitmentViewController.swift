@@ -71,7 +71,7 @@ class RecruitmentViewController: UIViewController, UITextFieldDelegate, UICollec
         let type = enterClass.text
         let image = selectedImage
         
-        if (!name!.isEmpty && !type!.isEmpty) {
+        if (!name!.trimmingCharacters(in: .whitespaces).isEmpty && !type!.trimmingCharacters(in: .whitespaces).isEmpty) {
             let adv = Adventurer(name: name!, image: image, remainingHP: 100, totalHP:100, attack:1.00, level: 1, type: type!)
             saveAdventurer(adv: adv)
             performSegue(withIdentifier: "saveSegue", sender: self)
