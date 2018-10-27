@@ -52,7 +52,7 @@ class QuestViewController: UIViewController {
     }
     
     func startQuest() {
-        questLog.text += "\r\nA Monster suddenly appeared"
+        questLog.text += "\nA monster suddenly appeared"
         getMonster()
         
         userTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(userAttack), userInfo: nil, repeats: true)
@@ -69,20 +69,21 @@ class QuestViewController: UIViewController {
     @objc func userAttack() {
         if remainingHP <= 0 {
             remainingHP = 0
-            questLog.text += "\r\n\(name) is defeated"
+            questLog.text += "\n\(name) is defeated"
             userTimer.invalidate()
             enemyTimer.invalidate()
+        } else {
+            let userDamage = Int(floor(Float.random(in: 0...attack * 10)))
+            questLog.text += "\n\(name) attacks for \(userDamage) damage"
+            monsterHP -= userDamage
         }
-        let userDamage = Int(floor(Float.random(in: 0...attack * 10)))
-        questLog.text += "\r\n\(name) attacks for \(userDamage) damage"
-        monsterHP -= userDamage
         updateLabels()
     }
     
     @objc func enemyAttack() {
         if monsterHP <= 0 {
-            questLog.text += "\r\nThe monster is defeated\r\n\(name) leveled up"
-            attack += 1
+            questLog.text += "\nThe monster is defeated\n\(name) leveled up"
+            attack += 0.5 + Float(Int.random(in: 0...50))
             level += 1
             userTimer.invalidate()
             enemyTimer.invalidate()
@@ -90,10 +91,10 @@ class QuestViewController: UIViewController {
         } else {
             let doesEnemyAttack = Int.random(in: 0 ... 4)
             if doesEnemyAttack == 0 {
-                questLog.text += "\r\nThe monster is waiting..."
+                questLog.text += "\nThe monster is waiting..."
             } else {
                 let enemyDamage = Int.random(in: 0 ... monsterAttack)
-                questLog.text += "\r\nThe monster attacks \(name) for \(enemyDamage)"
+                questLog.text += "\nThe monster attacks \(name) for \(enemyDamage) damage"
                 remainingHP -= enemyDamage
             }
         }
