@@ -52,19 +52,32 @@ class RecruitmentViewController: UIViewController, UITextFieldDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         
 
 //        enterName.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        imageCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: [])
+        
     }
 
     @IBAction func onSave(_ sender: Any) {
         let name = enterName.text
         let type = enterClass.text
         let image = selectedImage
-        let adv = Adventurer(name: name!, image: image, remainingHP: 100, totalHP:100, attack:1.00, level: 1, type: type!)
-        saveAdventurer(adv: adv)
+        
+        if (!name!.isEmpty && !type!.isEmpty) {
+            let adv = Adventurer(name: name!, image: image, remainingHP: 100, totalHP:100, attack:1.00, level: 1, type: type!)
+            saveAdventurer(adv: adv)
+            performSegue(withIdentifier: "saveSegue", sender: self)
+        }
+        
+        
         
     }
     

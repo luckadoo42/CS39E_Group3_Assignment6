@@ -142,4 +142,34 @@ class QuestViewController: UIViewController {
         
         performSegue(withIdentifier: "toTableView", sender: self)
     }
+    @IBAction func onEndQuest(_ sender: Any) {
+        adventurer?.attack = attack
+        adventurer?.totalHP = totalHP
+        adventurer?.remainingHP = totalHP
+        adventurer?.level = level
+        
+        Adventurer.adventurers[adventurerIndex] = adventurer!
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let person = AdventurersViewController.adventurers[adventurerIndex]
+        
+        person.setValue(remainingHP, forKeyPath: "remainingHP")
+        person.setValue(totalHP, forKeyPath: "totalHP")
+        person.setValue(attack, forKeyPath: "attack")
+        person.setValue(level, forKeyPath: "level")
+        
+        do {
+            try managedContext.save()
+            AdventurersViewController.adventurers.append(person)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
 }

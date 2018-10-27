@@ -139,7 +139,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onSave:" destination="RaP-tJ-w56" eventType="touchUpInside" id="UzR-dT-HtB"/>
-                                    <segue destination="0OA-ZU-bd2" kind="custom" customClass="DismissSegue" customModule="group3_assignment6" customModuleProvider="target" id="Mqu-T0-YE4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -174,11 +173,12 @@
                         <outlet property="enterClass" destination="wdc-hX-xL6" id="lzS-or-A0v"/>
                         <outlet property="enterName" destination="ml8-QQ-5KN" id="Qbg-hB-nGR"/>
                         <outlet property="imageCollectionView" destination="1Gx-lk-uVx" id="gZY-mp-FvO"/>
+                        <segue destination="0OA-ZU-bd2" kind="custom" identifier="saveSegue" customClass="DismissSegue" customModule="group3_assignment6" customModuleProvider="target" id="klA-0I-rq0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6a-B9-YCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829.5999999999999" y="-476.31184407796104"/>
+            <point key="canvasLocation" x="2132" y="-458"/>
         </scene>
         <!--Adventurers-->
         <scene sceneID="4ha-6n-3vD">
@@ -400,7 +400,8 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0OA-ZU-bd2" kind="custom" customClass="DismissSegue" customModule="group3_assignment6" customModuleProvider="target" id="YMv-yp-MzL"/>
+                                    <action selector="onEndQuest:" destination="lgH-zH-RO4" eventType="touchUpInside" id="CHI-wo-aNU"/>
+                                    <segue destination="0OA-ZU-bd2" kind="custom" identifier="endQuest" customClass="DismissSegue" customModule="group3_assignment6" customModuleProvider="target" id="vb9-DT-xvP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-k6-KW1">
@@ -464,6 +465,6 @@
         <image name="donkeykong" width="207" height="243"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TSs-Lc-QdT"/>
+        <segue reference="klA-0I-rq0"/>
     </inferredMetricsTieBreakers>
 </document>
